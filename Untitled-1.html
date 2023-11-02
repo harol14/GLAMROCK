@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="trago1.css">
+    <title>Ateam. Coorpration</title>
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+    <style>
+        /* Estilo para ocultar el contenido de usuario al principio */
+        .user-info {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #686868;
+            padding: 10px;
+            border: 1px solid #cc0000;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <center><h1 style="color:rgb(221, 0, 0);font-size: 100px;">Ateam - login</h1></center>
+    <img src="ateam.png"/>
+    <h2 style="color: blueviolet;">Antes de continuar debes tener en cuenta la siguiente información</h2>
+</header>
+<nav>
+    <ul>
+        <li><a href="Untitled-2.html" title="Ateam-Information"><h3><n>los juegos y los niños</n></h3></a></li>
+        <!-- Agrega la pestaña de usuario en la barra de navegación -->
+        <li><a href="#" id="userTab" onclick="toggleUserTab()">Usuario</a></li>
+        <!--Agrega la pestaña de inicio de secion en la barra de navegacion-->
+        <li><a href="#" id="loginTab" onclick="toggleLoginTab()">Iniciar sesión</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <h4>Registrarse</h4>
+    <form action="urquijotorresjuanadres@gmail.com" method="post">
+        <label for="name">Gamertag:</label>
+        <input type="text" id="gamertag" name="usuario"><br><br>
+        <label for="Correo">Correo:</label>
+        <input type="email" id="correo" name="email"><br><br>
+        <label for="Contraseña">Contraseña:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="Confirmar contraseña">Confirmar contraseña:</label>
+        <input type="password" id="password2" name="password2">
+        <button type="button" onclick="validatePassword()">Guardar</button>
+    </form>
+    <p id="mensaje"></p>
+</div>
+
+<div class="login-info">
+    <!-- Contenido del formulario de inicio de sesión -->
+    <h3>Iniciar sesión</h3>
+    <form action="Untitled-4.html" method="post">
+        <label for="nombre_usuario">Gamertag:</label>
+        <input type="text" id="nombre_usuario" name="nombre_usuario"><br><br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena"><br><br>
+        <button type="button" onclick="login()">Iniciar sesión</button>
+    </form>
+    <p id="mensaje_login"></p>
+</div>
+
+<!-- Contenido de usuario (se mostrará al hacer clic en la pestaña de usuario) -->
+<div class="user-info">
+    <h3>¡Bienvenido, <span id="userInfoGamertag">[Gamertag]</span>!</h3>
+    <p>Correo: <span id="userInfoCorreo">[Correo]</span></p>
+</div>
+
+<script>
+    function validatePassword() {
+        var gamertag = document.getElementById("gamertag").value;
+        var correo = document.getElementById("correo").value;
+
+        var userInfoGamertag = document.getElementById("userInfoGamertag");
+        var userInfoCorreo = document.getElementById("userInfoCorreo");
+
+        userInfoGamertag.textContent = gamertag;
+        userInfoCorreo.textContent = correo;
+
+        var password = document.getElementById("password").value;
+        var password2 = document.getElementById("password2").value;
+
+        if (password === password2) {
+            document.getElementById("mensaje").innerHTML = "gracias por registrarse";
+            redirectToAnotherPage();
+        } else {
+            document.getElementById("mensaje").innerHTML = "Las contraseñas no coinciden";
+            
+        }
+    }
+    function redirectToAnotherPage() {
+        // Redirige a la página
+        window.location.href = "untitled-3.html";
+    }
+    // Función para mostrar/ocultar el menú de usuario
+    function toggleUserTab() {
+        var userTab = document.querySelector(".user-info");
+        if (userTab.style.display === "none") {
+            userTab.style.display = "block";
+        } else {
+            userTab.style.display = "none";
+        }
+    }
+    // Funcion para el inicion de secion
+    function toggleLoginTab() {
+    var loginTab = document.querySelector(".login-info");
+    if (loginTab.style.display === "none") {
+        loginTab.style.display = "block";
+    } else {
+        loginTab.style.display = "none";
+    }
+}
+function login() {
+    var nombreUsuario = document.getElementById("nombre_usuario").value;
+    var contrasena = document.getElementById("contrasena").value;
+    // verificación de credenciales 
+    if (nombreUsuario === "Gamertag" && contrasena === "contraseña") {
+        window.location.href = "Untitled-3.html"; 
+    } else {
+        // Las credenciales son incorrectas
+        document.getElementById("mensaje_login").innerHTML = "Usuario no encontrado. Inténtalo de nuevo.";
+    }
+}
+</script>
+</body>
+</html>

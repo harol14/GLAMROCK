@@ -1,0 +1,157 @@
+* styles.css */
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+}
+img {
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    background-color: #444;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.user-info {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #2c3e50; /* Cambia el color de fondo a un tono de azul oscuro */
+    color: #ecf0f1; /* Cambia el color del texto a blanco */
+    padding: 10px;
+    border: 1px solid #2980b9; /* Cambia el color del borde a azul */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+    z-index: 999;
+}
+/* Estilo para la pestaña de usuario */
+#userTab {
+    text-decoration: none;
+    color: #fff; /* Color del texto blanco */
+    background: #e74c3c; /* Color de fondo rojo */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#userTab:hover {
+    background: #c0392b; /* Cambia el color de fondo al pasar el cursor */
+}
+/* Estilo para el contenido de usuario */
+.user-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #2c3e50; /* Color de fondo azul oscuro */
+    color: #ecf0f1; /* Color del texto blanco */
+    padding: 10px;
+    border: 1px solid #2980b9; /* Borde azul */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    z-index: 999;
+    display: none;
+}
+
+.user-info h3 {
+    margin-bottom: 10px;
+}
+
+.user-info span {
+    color: #e74c3c; /* Color de texto rojo para Gamertag y Correo */
+    font-weight: bold;
+}
+
+.user-info p {
+    margin: 0;
+}
+/* Estilo para la actualización de la información del usuario */
+.user-info h3, .user-info span {
+    color: #e74c3c; /* Color de texto rojo para Gamertag y Correo */
+    font-weight: bold;
+}
+
+.user-info p {
+    margin: 0;
+}
+/* Estilo para la función de mostrar/ocultar el menú de usuario */
+#userTab {
+    transition: background-color 0.3s; /* Agrega una transición al color de fondo */
+}
+
+#userTab:hover {
+    background-color: #c0392b; /* Cambia el color de fondo al pasar el cursor */
+}
+/* Estilo para ocultar el contenido del inicio de sesión al principio */
+.login-info {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #4e4e4e;
+    padding: 10px;
+    border: 1px solid #cc0000;
+    z-index: 999;
+}

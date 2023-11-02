@@ -1,0 +1,50 @@
+<!DOCTYPE htm>
+<html>
+<head>
+    <link rel="stylesheet"type="text/css" href="prototype-ruleta.css">
+    <title>Ateam-ruleta</title>
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+</head>
+    <body>
+        <h1>Gracias por Registrarte, participa por los siguientes premios en nuestra ruleta</h1><br><br><br><br>
+        <div class="ruleta-container">
+            <ul class="ruleta">
+                <li style="background-color: #E74C3C;">Recompensa 1</li>
+                <li style="background-color: #27AE60;">Recompensa 2</li>
+                <li style="background-color: #F1C40F;">Recompensa 3</li>
+                <li style="background-color: #9B59B6;">Recompensa 4</li>
+                <li style="background-color: #E67E22;">Recompensa 5</li>
+            </ul>
+            <button class="spin-button" onclick="selectReward()">Seleccionar</button>
+        </div>
+        <script src="ruleta.js"></script>
+        <nav>
+            <ul>
+                <li><a href="Untitled-4.html" title="Ateam-Inicio"><h2>Ateam-News</h2></a></li>
+            </ul>
+        </nav>
+        
+        <script>
+function selectReward()  {
+            const options = document.querySelectorAll('.ruleta li');
+            const randomIndex = Math.floor(Math.random() * options.length);
+
+            // Gira la ruleta
+            const degrees = 360 * 4 + (360 / options.length) * randomIndex;
+            const wheel = document.querySelector('.ruleta');
+            wheel.style.transition = 'transform 3s ease-out';
+            wheel.style.transform = `rotate(${degrees}deg`;
+
+            // Muestra la recompensa seleccionada después de la animación
+            setTimeout(() => {
+                alert('Recompensa seleccionada: ' + options[randomIndex].textContent);
+                wheel.style.transition = 'none'; // Detiene la animación
+                wheel.style.transform = 'rotate(0deg)'; // Reinicia la ruleta
+            }, 3000);
+        }
+        </script>
+
+    </body>
+    </html>
+
